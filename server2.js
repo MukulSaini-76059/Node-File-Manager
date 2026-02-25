@@ -3,6 +3,8 @@ const app = express()
 const path = require("path")
 const fs = require("fs")
 
+const dotenv = require("dotenv")
+dotenv.config()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -42,7 +44,7 @@ app.post("/create", function(req,res){
   })
 })
 
-app.listen(3000, function(){
-    console.log("http://localhost:3000")
+app.listen(process.env.PORT, function(){
+    console.log(`http://localhost:${process.env.PORT}`)
 })
 
