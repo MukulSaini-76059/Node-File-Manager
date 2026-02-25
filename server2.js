@@ -27,6 +27,16 @@ app.get("/edit/:filename",function(req,res){
     res.render("edit",{filename:req.params.filename})
 })
 
+app.get("/delete/:filename",function(req,res){
+    res.render("delete",{filename:req.params.filename})
+})
+
+app.get("/delete/:filename/confirm",function(req,res){
+    fs.unlink(`./files/${req.params.filename}`,function(err){
+        if(err) return res.status(500).send("Error deleting file")
+            res.redirect("/")
+    })
+})  
 app.post("/edit",function(req,res){
     fs.rename(`./files/${req.body.Previous}`,`./files/${req.body.new.split(" ").join("")}.txt`,function(err){
         if(err) return res.status(500).send("Error renaming file")
