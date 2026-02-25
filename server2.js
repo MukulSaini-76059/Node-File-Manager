@@ -21,6 +21,17 @@ app.get("/files/:filename",function(req,res){
     })
 })
 
+app.get("/edit/:filename",function(req,res){
+    res.render("edit",{filename:req.params.filename})
+})
+
+app.post("/edit",function(req,res){
+    fs.rename(`./files/${req.body.Previous}`,`./files/${req.body.new.split(" ").join("")}.txt`,function(err){
+        if(err) return res.status(500).send("Error renaming file")
+            res.redirect("/")
+    })
+})
+
 app.post("/create", function(req,res){
   if(!req.body.title || !req.body.details) {
     return res.status(400).send("Title and details required");
