@@ -81,14 +81,6 @@ npm install
 npm start
 ```
 
-### 5️⃣ Open in browser
-
-```
-http://localhost:3000
-```
-
----
-
 ## 🧠 What I Learned
 
 - Working with the **fs module** in Node.js
