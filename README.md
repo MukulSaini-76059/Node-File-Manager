@@ -113,7 +113,7 @@ Feel free to fork this repository and submit a pull request.
 
 If you'd like to connect, collaborate, or give feedback:
 
-- GitHub: https://github.com/MukulSaini-76059/Node-File-Manager
+- GitHub: https://github.com/MukulSaini-76059
 - LinkedIn: https://www.linkedin.com/in/mukul-saini-603346321/
 
 ---
